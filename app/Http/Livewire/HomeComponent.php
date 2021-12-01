@@ -14,8 +14,7 @@ class HomeComponent extends Component
     {
         $products = Product::orderBy('created_at', 'desc')->get()->take(10);
         $category = HomeCategory::find(1);
-        $convert = "1"; 
-        $categories = Category::whereIn('id', $convert)->get();
+        $categories = Category::whereIn('id', 1)->get();
         $numOfCate = $category->num;
         $sale = Sale::find(1);
         $s_products = Product::where('sale_price', '>' ,0)->inRandomOrder()->get()->take(10);
